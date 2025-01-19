@@ -62,39 +62,4 @@ class ProjectTests(APITestCase):
         for insurance in response.data:
             self.assertNotIn("policy_number", insurance)
 
-    # def test_crud_personal_info_with_token(self):
-    #     """
-    #     انجام عملیات CRUD روی PersonalInfo با توکن معتبر.
-    #     """
-    #     # تست ایجاد
-    #     response = self.client.post("/api/personal-info/", {
-    #         "user": self.user.id,
-    #         "firstname": "Sara",
-    #         "lastname": "Karimi",
-    #         "age": 28,
-    #         "gender": "Female",
-    #         "mobile": "123123123"
-    #     })
-    #     self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-    #     # تست خواندن
-    #     response = self.client.get(f"/api/personal-info/{self.personal_info.id}/")
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertEqual(response.data["firstname"], "Ali")
-
-    #     # تست ویرایش
-    #     response = self.client.put(f"/api/personal-info/{self.personal_info.id}/", {
-    #         "user": self.user.id,
-    #         "firstname": "Ali Reza",
-    #         "lastname": "Hosseini",
-    #         "age": 35,
-    #         "gender": "Male",
-    #         "mobile": "987987987"
-    #     })
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
-    #     self.assertEqual(response.data["firstname"], "Ali Reza")
-
-    #     # تست حذف
-    #     response = self.client.delete(f"/api/personal-info/{self.personal_info.id}/")
-    #     self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
